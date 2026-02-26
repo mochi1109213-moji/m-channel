@@ -1,0 +1,25 @@
+/* style.css の例 */
+body {
+    background-color: #efefef;
+    font-family: "MS PGothic", "Osaka", "ヒラギノ角ゴ Pro W3", sans-serif;
+    font-size: 16px;
+    line-height: 1.2;
+}
+
+.post {
+    margin-bottom: 20px;
+}
+
+.name {
+    color: #117743; /* 独特な緑色 */
+    font-weight: bold;
+}
+
+.number {
+    color: #ff0000; /* レス番号は赤 */
+}
+
+.message {
+    margin-top: 5px;
+    margin-left: 20px;
+}
