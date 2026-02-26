@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>2ch風掲示板</title>
+    <style>
+        body { background-color: #efefef; font-family: "MS PGothic", "Mona", monospaced; color: #000; }
+        .thread-title { color: #ff0000; font-size: 1.5em; border-bottom: 1px solid #ccc; }
+        .post { margin-bottom: 1.5em; }
+        .post-header { color: #117743; font-weight: bold; }
+        .post-num { color: #ff0000; }
+        .message { margin-top: 5px; margin-left: 1.5em; white-space: pre-wrap; font-size: 16px; }
+        form { background: #fff; padding: 10px; border: 1px solid #ccc; width: fit-content; }
+    </style>
+</head>
+<body>
+    <h1 class="thread-title">Renderで作る本格掲示板</h1>
+
+    {% for post in posts %}
+    <div class="post">
+        <span class="post-num">{{ loop.index }}</span>
+        <span class="post-header">名前：<b>{{ post.name }}</b></span>
+        <span>：{{ post.date }}</span>
+        <div class="message">{{ post.message }}</div>
+    </div>
+    {% endfor %}
+
+    <hr>
+    <form action="/post" method="POST">
+        名前：<input type="text" name="name" placeholder="名無しさん"><br>
+        <textarea name="message" rows="4" cols="50" required></textarea><br>
+        <input type="submit" value="書き込む">
+    </form>
+</body>
+</html>
